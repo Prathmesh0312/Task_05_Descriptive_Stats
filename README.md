@@ -93,6 +93,52 @@ To evaluate LLM reasoning quality, the same analytical questions were asked to b
 
 ---
 
-##  Summary
+##  Extended LLM Analysis: ChatGPT vs DeepSeek
 
-This project demonstrates that modern LLMs, when provided with structured CSV data and clear prompts, can perform reliable **descriptive**, **comparative**, and even **strategic** analysis — showcasing their potential for lightweight data exploration without explicit coding.
+As part of this extension, I expanded the prompted analysis using two large language models — **ChatGPT** and **DeepSeek**. Both models were given the same set of questions, divided into **Simple** and **Complex** types, to assess their reasoning and interpretation abilities on the bowling dataset.
+
+---
+
+###  Simple (Direct) Questions
+
+- **Who had the best economy rate across all matches?**  
+  - *ChatGPT:* Kuldeep Yadav – economy rate of 1.36  
+  - *DeepSeek:* Kuldeep Yadav – economy rate of 1.355 vs South Africa
+
+- **Who bowled the most overs in the tournament?**  
+  - *ChatGPT:* Kuldeep Yadav – 83.1 overs  
+  - *DeepSeek:* Mitchell Santner – 85.4 overs
+
+- **Which team won the most matches?**  
+  - *ChatGPT:* Australia with 56 wins *(Incorrect)*  
+  - *DeepSeek:* India – highlighted consistent wins, including the final
+
+---
+
+###  Complex (Reasoning-Based) Questions
+
+- **Most effective bowler (high wickets + low economy)**  
+  - *ChatGPT:* Adam Zampa – 22 wickets, 4.96 economy  
+  - *DeepSeek:* Mohammed Shami – 23 wickets, 5.10 economy
+
+- **Most improved bowler (based on match-wise trend)**  
+  - *ChatGPT:* Gus Atkinson – rising wickets and declining economy  
+  - *DeepSeek:* Gerald Coetzee – early high economy (~7.5) improved to 6.23
+
+---
+
+###  Observations
+
+- ChatGPT and DeepSeek **agreed** on Kuldeep Yadav for best economy.
+- DeepSeek gave **more match-specific context**, while ChatGPT focused on aggregate stats.
+- ChatGPT gave an incorrect team win count, while DeepSeek correctly emphasized India’s dominance.
+- Reasoning around effectiveness and improvement varied — ChatGPT used trend logic, while DeepSeek leaned on qualitative match analysis.
+
+---
+
+###  Summary
+
+Both models performed well, but:
+- **ChatGPT** provided more structured stats and regression-based insights.
+- **DeepSeek** offered deeper match-level context, which added interpretive richness.
+- This comparison adds value to the previous analysis (with Claude and GPT-3) and shows how different models process the same structured data with varied emphasis.
